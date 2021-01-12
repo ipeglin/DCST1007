@@ -87,6 +87,7 @@ function createAccount() {
     }
     array.shift();
     console.log("Account created for: " + name + " under username: " + name.split(" ")[0].toLowerCase());
+    clearInputs();
 }
 
 function transferAmount() {
@@ -95,6 +96,22 @@ function transferAmount() {
     let reciever = document.getElementById("reciever").value;
     this[sender].withdraw(amount);
     this[reciever].deposit(amount);
+    clearInputs();
+    showAccounts();
+}
+
+
+
+function depositAmount() {
+    this[document.getElementById("deposit-name-input").value.toLowerCase()].deposit(parseFloat(document.getElementById("deposit-amount").value));
+    clearInputs();
+    showAccounts();
+}
+
+function withdrawAmount() {
+    this[document.getElementById("withdraw-name-input").value.toLowerCase()].withdraw(parseFloat(document.getElementById("withdraw-amount").value));
+    clearInputs();
+    showAccounts();
 }
 
 function showAccounts() {
@@ -103,10 +120,15 @@ function showAccounts() {
     }
 }
 
-function depositAmount() {
-    this[document.getElementById("deposit-name-input").value.toLowerCase()].deposit(parseFloat(document.getElementById("deposit-amount").value));
-}
-
-function withdrawAmount() {
-    this[document.getElementById("withdraw-name-input").value.toLowerCase()].withdraw(parseFloat(document.getElementById("withdraw-amount").value));
+function clearInputs() {
+    document.getElementById("name-input").value = "";
+    document.getElementById("deposit-input").value = "";
+    document.getElementById("isChild").checked = false;
+    document.getElementById("sender").value = "";
+    document.getElementById("reciever").value = "";
+    document.getElementById("transfer-sum-input").value = "";
+    document.getElementById("deposit-name-input").value = "";
+    document.getElementById("deposit-amount").value = "";
+    document.getElementById("withdraw-name-input").value = "";
+    document.getElementById("withdraw-amount").value = "";
 }
