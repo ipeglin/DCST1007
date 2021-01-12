@@ -6,6 +6,7 @@
         <title>Øving 2</title>
     </head>
     <body>
+        <h1>Åpne ny konto</h1>
         Fult navn: <input id="name-input" type="text" placeholder="Fult navn">
         <br>
         Første innskudd: <input id="deposit-input" type="number" placeholder="0 kr">
@@ -13,6 +14,26 @@
         Kunden er yngre enn 13 år <input id="isChild" value="true" type="checkbox">
         <br><br>
         <button id="submit-button" onclick="createAccount()">Opprett konto</button>
+        <br><br><br>
+        <h1>Overfør til konto:</h1>
+        <br>
+        Avsender (brukernavn): <input id="sender"><br>
+        Mottaker (brukernavn): <input id="reciever"><br>
+        Sum: <input id="transfer-sum-input" type="number" placeholder="0 kr">
+        <br>
+        <button id="submit-transfer-button" onclick="transferAmount()">Overfør beløp</button>
+        <h1>Sett inn på konto:</h1>
+        Innskuddskonto (brukernavn): <input id="deposit-name-input">
+        <br>
+        Sum: <input id="deposit-amount" type="number">
+        <br>
+        <button id="deposit-button" onclick="depositAmount()">Sett inn penger</button>
+        <h1>Trekk fra konto:</h1>
+        Konto (brukernavn): <input id="withdraw-name-input">
+        <br>
+        Sum: <input id="withdraw-amount" type="number">
+        <br>
+        <button id="withdraw-button" onclick="withdrawAmount()">Ta ut penger</button>
 
         <script src="index.js"></script>
     </body>
