@@ -115,3 +115,20 @@ function rgbToHex(r, g, b) {
 
 
 // NB! Calling the functions in the constructor for Bubble in the base code
+// This is also true for the function making the bubbles return to their previous colour
+
+
+
+// OPPGAVE 2
+
+// The BUBBLE CREATOR!!!
+setInterval(() => {
+    let newx = Math.floor(Math.random() * canvas.width);
+    let newy = Math.floor(Math.random() * canvas.height);
+    let newr = Math.floor(Math.random() * 40 + 10);
+    bubbles.push(new Bubble(newx, newy, newr))
+}, 1000);
+
+
+
+// OPPGAVE 3
