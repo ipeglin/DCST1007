@@ -1,3 +1,5 @@
+
+/*  BASE CODE PROVIDED FROM LESSON  */
 class Bubble {
     constructor(x, y, r) {
         this.x = x;
@@ -85,14 +87,25 @@ function mouseMove(event) {
         if (bubbles[i].isHovering(event.x, event.y)) {
             bubbles[i].color = "red";
         }
+        else {
+
+        }
     }
 }
+/*  END OF BASE CODE  */
 
+
+// OPPGAVE 1
+
+// Function to convert decimal integers to hexadecimal numbers
 function numberToHex(n) {
     let h = n.toString(16);
     return h.length == 1 ? "0" + h : h;
 }
 
+// Function to convert RGB values to an hexadecimal color code
 function rgbToHex(r, g, b) {
     return "#" + numberToHex(r) + numberToHex(g) + numberToHex(b);
 }
+
+// NB! Calling the functions in the constructor for Bubble in the base code
