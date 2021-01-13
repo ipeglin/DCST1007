@@ -15,11 +15,22 @@ class Bubble {
     move() {
         this.x = this.x + Math.floor(Math.random() * 10 - 5);
         this.y = this.y + Math.floor(Math.random() * 10 - 5);
+        // Placing a constrictor on the right side of the canvas
         if (this.x >= (canvas.width - this.rad)) {
-            this.x = this.x - 5;
+            this.x -= 5;
         }
+        // Restricting bubbles on the left side
         if (this.x <= this.rad) {
-            this.x = this.x + 5;
+            this.x += 5;
+        }
+
+        // Top restriction
+        if (this.y < this.rad) {
+            this.y += 5;
+        }
+        // Botton restriction
+        if (this.y > (canvas.height - this.rad)) {
+            this.y -= 5;
         }
     }
 
