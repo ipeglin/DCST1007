@@ -15,6 +15,12 @@ class Bubble {
     move() {
         this.x = this.x + Math.floor(Math.random() * 10 - 5);
         this.y = this.y + Math.floor(Math.random() * 10 - 5);
+        if (this.x >= (canvas.width - this.rad)) {
+            this.x = this.x - 5;
+        }
+        if (this.x <= this.rad) {
+            this.x = this.x + 5;
+        }
     }
 
     display() {
