@@ -2,9 +2,11 @@
 /*  BASE CODE PROVIDED FROM LESSON  */
 class Bubble {
     constructor(x, y, rad) {
+        // Added rgb values to more conveniently add the same color to originalColor property
         let r = Math.floor(Math.random() * 255);
         let g = Math.floor(Math.random() * 255);
         let b = Math.floor(Math.random() * 255);
+        // Properties
         this.x = x;
         this.y = y;
         this.rad = rad;
@@ -12,7 +14,9 @@ class Bubble {
         this.originalColor = rgbToHex(r, g, b);
     }
 
+    // Move the position of the bubbles
     move() {
+        // Randomizing the new bubble coordinates
         this.x = this.x + Math.floor(Math.random() * 10 - 5);
         this.y = this.y + Math.floor(Math.random() * 10 - 5);
         // Placing a constrictor on the right side of the canvas
@@ -34,16 +38,21 @@ class Bubble {
         }
     }
 
+    // Display the bubble on the canvas using canvas.getContext
     display() {
         ctx.beginPath();
+        // Specifying a circle
         ctx.arc(this.x, this.y, this.rad, 0, 2 * Math.PI);
         ctx.fillStyle = this.color;
         ctx.fill();
+        // Defining a white border around the bubble
         ctx.strokeStyle = "white";
         ctx.stroke();
     }
 
+    // A method to check if the mouse if currently hovering a bubble
     isHovering(xcoor, ycoor) {
+        // Calculating distance between the bubble and the cursor
         let a = xcoor - this.x;
         let b = ycoor - this.y;
         let distance = Math.sqrt(a ** 2 + b ** 2);
@@ -60,11 +69,13 @@ class Bubble {
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
+// Program listens for a mouse click and mouse movements to run their respective functions
 canvas.addEventListener("mousedown", mouseClick, false);
 canvas.addEventListener("mousemove", mouseMove, false);
 
 let bubbles = [];
 
+// Initialy create 10 bubbles
 for (let i = 0; i < 10; i++) {
     let x = Math.floor(Math.random() * canvas.width);
     let y = Math.floor(Math.random() * canvas.height);
@@ -72,8 +83,10 @@ for (let i = 0; i < 10; i++) {
     bubbles[i] = new Bubble(x, y, rad);
 }
 
+// Draw the bubbles evert 0.1 seconds. This wil "blank" out the canvas and "live" imitates movement
 setInterval(draw, 100);
 
+// Drawing the bubble onto the canvas. What a masterpiece
 function draw() {
     reset();
     for (let i = 0; i < bubbles.length; i++) {
@@ -82,11 +95,13 @@ function draw() {
     }
 }
 
+// "Paint, it black" - The Rolling Stones
 function reset() {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+// Function deletes a bubble when clicked, or creates a new one if clicking and emty part of the canvas
 function mouseClick(event) {
     let isOverBubble = false;
     for (let i = 0; i < bubbles.length; i++) {
@@ -103,6 +118,7 @@ function mouseClick(event) {
     }
 }
 
+// Function that turns the bubble colour red when the mouse hovers over it. The colour will return "onmouseleave"
 function mouseMove(event) {
     for (let i = 0; i < bubbles.length; i++) {
         if (bubbles[i].isHovering(event.x, event.y)) {
@@ -149,3 +165,5 @@ setInterval(() => {
 
 
 // OPPGAVE 3
+
+// NB! All of the code lies underneath the "move" method for the Bubble class
