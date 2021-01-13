@@ -1,11 +1,15 @@
 
 /*  BASE CODE PROVIDED FROM LESSON  */
 class Bubble {
-    constructor(x, y, r) {
+    constructor(x, y, rad) {
+        let r = Math.floor(Math.random() * 255);
+        let g = Math.floor(Math.random() * 255);
+        let b = Math.floor(Math.random() * 255);
         this.x = x;
         this.y = y;
-        this.r = r;
-        this.color = rgbToHex(Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255));
+        this.rad = rad;
+        this.color = rgbToHex(r, g, b);
+        this.originalColor = rgbToHex(r, g, b);
     }
 
     move() {
@@ -15,7 +19,7 @@ class Bubble {
 
     display() {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+        ctx.arc(this.x, this.y, this.rad, 0, 2 * Math.PI);
         ctx.fillStyle = this.color;
         ctx.fill();
         ctx.strokeStyle = "white";
@@ -27,7 +31,7 @@ class Bubble {
         let b = ycoor - this.y;
         let distance = Math.sqrt(a ** 2 + b ** 2);
 
-        if (distance < this.r) {
+        if (distance < this.rad) {
             return true;
         }
         else {
@@ -47,8 +51,8 @@ let bubbles = [];
 for (let i = 0; i < 10; i++) {
     let x = Math.floor(Math.random() * canvas.width);
     let y = Math.floor(Math.random() * canvas.height);
-    let r = Math.floor(Math.random() * 40 + 10);
-    bubbles[i] = new Bubble(x, y, r);
+    let rad = Math.floor(Math.random() * 40 + 10);
+    bubbles[i] = new Bubble(x, y, rad);
 }
 
 setInterval(draw, 100);
@@ -88,7 +92,7 @@ function mouseMove(event) {
             bubbles[i].color = "red";
         }
         else {
-
+            bubbles[i].color = bubbles[i].originalColor;
         }
     }
 }
@@ -105,7 +109,9 @@ function numberToHex(n) {
 
 // Function to convert RGB values to an hexadecimal color code
 function rgbToHex(r, g, b) {
-    return "#" + numberToHex(r) + numberToHex(g) + numberToHex(b);
+    hex = "#" + numberToHex(r) + numberToHex(g) + numberToHex(b);
+    return hex;
 }
+
 
 // NB! Calling the functions in the constructor for Bubble in the base code
