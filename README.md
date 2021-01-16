@@ -1,5 +1,5 @@
 # DCST1007 - Assignments
-This repository contains assignments from the course [DCST1007](https://www.ntnu.no/studier/emner/DCST1007) at [NTNU, Trondheim](https://www.ntnu.no/).
+This repository contains assignments from the course [DCST1007](https://www.ntnu.edu/studies/courses/DCST1007) at [NTNU, Trondheim](https://www.ntnu.edu/).
 
 ## OOP1 - Introduction to OOP with JavaScript
 Experimenting with the pure basics of Object Oriented Programming in JavaScript. Some of the variable names and such is in Norwegian since some of the points required it.
