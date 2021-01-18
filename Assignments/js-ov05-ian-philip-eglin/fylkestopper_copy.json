@@ -1,0 +1,97 @@
+[
+    {
+        "county": "Akershus",
+        "name": "Fjellsjøkampen",
+        "altitude": 812
+    },
+    {
+        "county": "Aust-Agder",
+        "name": "Sæbyggjenuten",
+        "altitude": 1507
+    },
+    {
+        "county": "Buskerud",
+        "name": "Folarskardnuten",
+        "altitude": 1933
+    },
+    {
+        "county": "Finnmark",
+        "name": "Øksfjordjøkelen",
+        "altitude": 1191
+    },
+    {
+        "county": "Hedmark",
+        "name": "Rondslottet",
+        "altitude": 2178
+    },
+    {
+        "county": "Hordaland",
+        "name": "Hardangerjøkulen",
+        "altitude": 1861
+    },
+    {
+        "county": "Møre og Romsdal",
+        "name": "Pyttegga",
+        "altitude": 1999
+    },
+    {
+        "county": "Nord-Trøndelag",
+        "name": "Jetnamsklumpen",
+        "altitude": 1512
+    },
+    {
+        "county": "Nordland",
+        "name": "Oksskolten",
+        "altitude": 1915
+    },
+    {
+        "county": "Oppland",
+        "name": "Galdhøpiggen",
+        "altitude": 2469
+    },
+    {
+        "county": "Oslo",
+        "name": "Kjerkeberget",
+        "altitude": 630
+    },
+    {
+        "county": "Rogaland",
+        "name": "Vassdalseggi",
+        "altitude": 1658
+    },
+    {
+        "county": "Sogn og Fjordane",
+        "name": "Store Skagastølstinden",
+        "altitude": 2405
+    },
+    {
+        "county": "Sør-Trøndelag",
+        "name": "Storskrymten",
+        "altitude": 1985
+    },
+    {
+        "county": "Telemark",
+        "name": "Gaustatoppen",
+        "altitude": 1883
+    },
+    {
+        "county": "Troms",
+        "name": "Jiehkkevári",
+        "altitude": 1834
+    },
+    {
+        "county": "Vest-Agder",
+        "name": "Urdalsknuten",
+        "altitude": 1433
+    },
+    {
+        "county": "Vestfold",
+        "name": "Vestfjellet",
+        "altitude": 634
+    },
+    {
+        "county": "Østfold",
+        "name": "Slavasshøgda",
+        "altitude": 336
+    }
+]
