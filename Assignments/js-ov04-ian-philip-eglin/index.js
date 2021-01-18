@@ -86,9 +86,15 @@ let baseArray = ["c", "a", "b", "hello world", "3", "1", "2"];
 convertToUpperCase(baseArray).then(result => sortArray(result)).then(result => console.log(result)).catch(msg => console.error (msg));
 
 
-// SLUTT
-
-
 
 // OPPGAVE 3
+// Function that displays the avatar of a given github user on the page
+let getUserData = (username) => {
+    return fetch(`https://api.github.com/users/${username}`)
+        .then(result => result.json())
+        .then(data => document.getElementById("user-avatar").src = data.avatar_url)
+        .catch(msg => console.error(msg));
+}
 
+// Using my own username as an example
+getUserData("ipeglin")
