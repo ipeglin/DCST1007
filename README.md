@@ -12,3 +12,6 @@ Learning to take use of the canvas element in HTML and how it can be manipulatet
 
 ## OOP4 - Promises
 Exploring the world of promises and what they can be used for. Created simple functions for validating and sizing up a number compared to 10, as well as a function that makes a *"shouting"* array and sorts it alphabetaically. Both of the functions will reject and provide a new error message in the console if the input is something unexpected.
+
+## OOP5 - JSON
+Once again trying to use JSON as a database such as previously done in one of last years [DCST1003 Assignments](https://github.com/ipeglin/DCST1003/tree/master/Assignments/js-ov09-ian-philip-eglin). In this assignment, the array containing informations with the highest mountains in every norwegian county, was to be declared in the JS file and then stored locally using setItem. As we still don't have much experience with JSON this improved some of my understanding of it's abilities.
