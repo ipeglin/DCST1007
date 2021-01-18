@@ -1,6 +1,7 @@
 
 // OPPGAVE 1
 
+// Creating a JSON formated array of objects
 let mountainData = [
     {
         "county_name": "Akershus",
@@ -99,7 +100,9 @@ let mountainData = [
     }
 ];
 
+// Converting the data into JSON format
 let mountainText = JSON.stringify(mountainData);
+// Locally storing the data under the json file fylkestopper.json
 localStorage.setItem("fylkestopper.json", mountainText)
 
 
@@ -163,7 +166,6 @@ table2.style.border = "2px solid black";
 table2.style.float = "left";
 table2.style.marginLeft = "15px";
 
-
 // Just a copy of the code from OPPGAVE 2
 for (let element of document.getElementsByTagName("th")) {
     element.style.textAlign = "left";
@@ -174,8 +176,3 @@ for (let element of document.getElementsByTagName("td")) {
     element.style.paddingRight = "2em";
     element.style.borderTop = "1px solid black";
 }
-
-
-
-// OPPGAVE 4
-
