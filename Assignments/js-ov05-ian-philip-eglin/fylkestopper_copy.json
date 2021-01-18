@@ -1,97 +1,97 @@
 [
     {
-        "county": "Akershus",
-        "name": "Fjellsjøkampen",
+        "county_name": "Akershus",
+        "summit_name": "Fjellsjøkampen",
         "altitude": 812
     },
     {
-        "county": "Aust-Agder",
-        "name": "Sæbyggjenuten",
+        "county_name": "Aust-Agder",
+        "summit_name": "Sæbyggjenuten",
         "altitude": 1507
     },
     {
-        "county": "Buskerud",
-        "name": "Folarskardnuten",
+        "county_name": "Buskerud",
+        "summit_name": "Folarskardnuten",
         "altitude": 1933
     },
     {
-        "county": "Finnmark",
-        "name": "Øksfjordjøkelen",
+        "county_name": "Finnmark",
+        "summit_name": "Øksfjordjøkelen",
         "altitude": 1191
     },
     {
-        "county": "Hedmark",
-        "name": "Rondslottet",
+        "county_name": "Hedmark",
+        "summit_name": "Rondslottet",
         "altitude": 2178
     },
     {
-        "county": "Hordaland",
-        "name": "Hardangerjøkulen",
+        "county_name": "Hordaland",
+        "summit_name": "Hardangerjøkulen",
         "altitude": 1861
     },
     {
-        "county": "Møre og Romsdal",
-        "name": "Pyttegga",
+        "county_name": "Møre og Romsdal",
+        "summit_name": "Pyttegga",
         "altitude": 1999
     },
     {
-        "county": "Nord-Trøndelag",
-        "name": "Jetnamsklumpen",
+        "county_name": "Nord-Trøndelag",
+        "summit_name": "Jetnamsklumpen",
         "altitude": 1512
     },
     {
-        "county": "Nordland",
-        "name": "Oksskolten",
+        "county_name": "Nordland",
+        "summit_name": "Oksskolten",
         "altitude": 1915
     },
     {
-        "county": "Oppland",
-        "name": "Galdhøpiggen",
+        "county_name": "Oppland",
+        "summit_name": "Galdhøpiggen",
         "altitude": 2469
     },
     {
-        "county": "Oslo",
-        "name": "Kjerkeberget",
+        "county_name": "Oslo",
+        "summit_name": "Kjerkeberget",
         "altitude": 630
     },
     {
-        "county": "Rogaland",
-        "name": "Vassdalseggi",
+        "county_name": "Rogaland",
+        "summit_name": "Vassdalseggi",
         "altitude": 1658
     },
     {
-        "county": "Sogn og Fjordane",
-        "name": "Store Skagastølstinden",
+        "county_name": "Sogn og Fjordane",
+        "summit_name": "Store Skagastølstinden",
         "altitude": 2405
     },
     {
-        "county": "Sør-Trøndelag",
-        "name": "Storskrymten",
+        "county_name": "Sør-Trøndelag",
+        "summit_name": "Storskrymten",
         "altitude": 1985
     },
     {
-        "county": "Telemark",
-        "name": "Gaustatoppen",
+        "county_name": "Telemark",
+        "summit_name": "Gaustatoppen",
         "altitude": 1883
     },
     {
-        "county": "Troms",
-        "name": "Jiehkkevári",
+        "county_name": "Troms",
+        "summit_name": "Jiehkkevári",
         "altitude": 1834
     },
     {
-        "county": "Vest-Agder",
-        "name": "Urdalsknuten",
+        "county_name": "Vest-Agder",
+        "summit_name": "Urdalsknuten",
         "altitude": 1433
     },
     {
-        "county": "Vestfold",
-        "name": "Vestfjellet",
+        "county_name": "Vestfold",
+        "summit_name": "Vestfjellet",
         "altitude": 634
     },
     {
-        "county": "Østfold",
-        "name": "Slavasshøgda",
+        "county_name": "Østfold",
+        "summit_name": "Slavasshøgda",
         "altitude": 336
     }
 ]
