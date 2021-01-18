@@ -127,9 +127,11 @@ document.getElementById("tableHolder").innerHTML = tableElement;
 
 // Creating outer border for the table element
 document.getElementById("summit-table").style.border = "2px solid black";
+document.getElementById("summit-table").style.float = "left";
 // Aligning the table headers to the left of the column
 for (let element of document.getElementsByTagName("th")) {
     element.style.textAlign = "left";
+    element.style.fontSize = "130%";
 }
 // Adding padding to all table data elements and a thin border that makes the data easier to read
 for (let element of document.getElementsByTagName("td")) {
@@ -141,8 +143,37 @@ for (let element of document.getElementsByTagName("td")) {
 
 // OPPGAVE 3
 
+// sorting the data in decending order with respect to the altitudes
+let sortedData = data.sort((a, b) => parseFloat(b.altitude) - parseFloat(a.altitude));
 
-// SLUTT
+// Creating the HTML text for the table element
+let newTableElement = "<table id='summit-table2'><tr><th>Fylke</th><th>Fjelltopp</th><th>Høyde</th>";
+// For every county. List the following data in HTML
+for (let county of sortedData) {
+    newTableElement += `<tr><td>${county.county_name}</td><td>${county.summit_name}</td><td>${county.altitude}</tr>`;
+}
+newTableElement += "</table>"
+
+// Adding the table HTML text to the table holder div
+document.getElementById("tableHolder2").innerHTML = newTableElement;
+
+// Some styling of the second table
+let table2 = document.getElementById("summit-table2");
+table2.style.border = "2px solid black";
+table2.style.float = "left";
+table2.style.marginLeft = "15px";
+
+
+// Just a copy of the code from OPPGAVE 2
+for (let element of document.getElementsByTagName("th")) {
+    element.style.textAlign = "left";
+    element.style.fontSize = "130%";
+}
+
+for (let element of document.getElementsByTagName("td")) {
+    element.style.paddingRight = "2em";
+    element.style.borderTop = "1px solid black";
+}
 
 
 
