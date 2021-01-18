@@ -4,38 +4,44 @@
 
 
 // Validate number
-const validateNumber = function (number) {
+const validateNumber = (number) => {
     return new Promise((resolve, reject) => {
-        if (!isNaN(number) && typeof (number) == "number") {
-            console.log(`${number} is a valid number`)
+        // Making sure that the input is indeed a valid number
+        if (!isNaN(number) && typeof(number) == "number") {
+            // Resolving the promise and passing along the number
             resolve(number);
         }
         else {
+            // Rejecting the promise with a new error
             reject(new Error("Input was not a number"))
         }
     });
 }
 
 // Check number
-const valueNumber = function (number) {
-    return new Promise((resolve,reject) => {
+const valueNumber = (number) => {
+    return new Promise((resolve) => {
         let output;
+        // Evaluating if the input is equal to 10 or not
         if (number != 10) {
             var keyword = number > 10 ? "større" : "mindre";
-            output = `${number} er ` + keyword + " enn verdien 10."
+            output = `Tallet ${number} er ${keyword} enn verdien 10.`;
         }
         else {
-            output = `${number} er av samme verdi som 10.`;
+            output = `Tallet ${number} er av lik verdi som 10.`
         }
+        // Resolving the promise. There is no need for å reject here
         resolve(output);
     })
 }
 
-// Print number
+// Implementing a function that allows a user to test functionality easily in the console without writing the line every time
+let testNumber = (number) => {
+    validateNumber(number).then(num => valueNumber(num)).then(result => console.log(result)).catch(msg => console.error(msg));
+}
 
-validateNumber(2).then(res => console.log(valueNumber(res))).catch(err => console.error(err));
-
-// SLUTT
+// Checking the functionality with a randomized number upon load
+validateNumber(Math.floor(Math.random() * 20)).then((num) => valueNumber(num)).then((result) => console.log(result)).catch((msg) => console.error(msg))
 
 
 
