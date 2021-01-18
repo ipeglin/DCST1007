@@ -46,7 +46,44 @@ validateNumber(Math.floor(Math.random() * 20)).then((num) => valueNumber(num)).t
 
 
 // OPPGAVE 2
+// Converting all the strings in the array to upper case
+let convertToUpperCase = (array) => {
+    return new Promise((resolve, reject) => {
+        // If some element is not a string
+        try {
+            // Creating a new array since the array passed into the function cannot be manipulated with toUpperCase()
+            let newArray = [];
+            // Pushing all upper case elements to new array
+            for (let element of array) {
+                newArray.push(element.toUpperCase());
+            }
+            // Passing along the upper case array
+            resolve(newArray);
+        }
+        // Pass along a new error
+        catch {
+            reject(new Error("Not all elements are of class <String>"));
+        }
+    });
+}
 
+// Function that sorts the array
+let sortArray = (array) => {
+    return new Promise(resolve => {
+        array.sort();
+        // Passing along the sorted array
+        resolve(array);
+    });
+}
+
+// Function that allows for easily checking functionality in the console
+let testArray = (array) => {
+    convertToUpperCase(array).then(result => sortArray(result)).then(result => console.log(result)).catch(msg => console.error (msg));    
+}
+
+// Hard coded test of the functionallity for demonstration purposes
+let baseArray = ["c", "a", "b", "hello world", "3", "1", "2"];
+convertToUpperCase(baseArray).then(result => sortArray(result)).then(result => console.log(result)).catch(msg => console.error (msg));
 
 
 // SLUTT
