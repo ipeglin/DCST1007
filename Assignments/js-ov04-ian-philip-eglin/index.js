@@ -20,7 +20,7 @@ const validateNumber = (number) => {
 
 // Check number
 const valueNumber = (number) => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
         let output;
         // Evaluating if the input is equal to 10 or not
         if (number != 10) {
