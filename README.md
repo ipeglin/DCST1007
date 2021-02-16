@@ -15,3 +15,6 @@ Exploring the world of promises and what they can be used for. Created simple fu
 
 ## [OOP5](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov05-ian-philip-eglin) - JSON
 Once again trying to use JSON as a database such as previously done in one of last years [DCST1003 Assignments](https://github.com/ipeglin/DCST1003/tree/master/Assignments/js-ov09-ian-philip-eglin). In this assignment, the array containing informations with the highest mountains in every norwegian county, was to be declared in the JS file and then stored locally using setItem. As we still don't have much experience with JSON this improved some of my understanding of it's abilities.
+
+## [OOP6](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov06-ian-philip-eglin/src) - Static applications
+Getting started with the React framework. The assignment was to make a resume with static pages using the framework and running it in electron.
