@@ -20,7 +20,7 @@ const validateNumber = (number) => {
 
 // Check number
 const valueNumber = (number) => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
         let output;
         // Evaluating if the input is equal to 10 or not
         if (number != 10) {
@@ -37,11 +37,17 @@ const valueNumber = (number) => {
 
 // Implementing a function that allows a user to test functionality easily in the console without writing the line every time
 let testNumber = (number) => {
-    validateNumber(number).then(num => valueNumber(num)).then(result => console.log(result)).catch(msg => console.error(msg));
+    validateNumber(number)
+        .then(num => valueNumber(num))
+        .then(result => console.log(result))
+        .catch(msg => console.error(msg));
 }
 
 // Checking the functionality with a randomized number upon load
-validateNumber(Math.floor(Math.random() * 20)).then((num) => valueNumber(num)).then((result) => console.log(result)).catch((msg) => console.error(msg))
+validateNumber(Math.floor(Math.random() * 20))
+    .then((num) => valueNumber(num))
+    .then((result) => console.log(result))
+    .catch((msg) => console.error(msg))
 
 
 
@@ -78,12 +84,18 @@ let sortArray = (array) => {
 
 // Function that allows for easily checking functionality in the console
 let testArray = (array) => {
-    convertToUpperCase(array).then(result => sortArray(result)).then(result => console.log(result)).catch(msg => console.error (msg));    
+    convertToUpperCase(array)
+        .then(result => sortArray(result))
+        .then(result => console.log(result))
+        .catch(msg => console.error(msg));    
 }
 
 // Hard coded test of the functionallity for demonstration purposes
 let baseArray = ["c", "a", "b", "hello world", "3", "1", "2"];
-convertToUpperCase(baseArray).then(result => sortArray(result)).then(result => console.log(result)).catch(msg => console.error (msg));
+convertToUpperCase(baseArray)
+    .then(result => sortArray(result))
+    .then(result => console.log(result))
+    .catch(msg => console.error(msg));
 
 
 
