@@ -18,3 +18,6 @@ Once again trying to use JSON as a database such as previously done in one of la
 
 ## [OOP6](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov06-ian-philip-eglin/src) - Static applications
 Getting started with the React framework. The assignment was to make a resume with static pages using the framework and running it in electron.
+
+## [OOP7](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov07-ian-philip-eglin/src) - Dynamic applications with database communication
+Implementing the use of databases to create dynamic applications that writes out the information from the databases. This assignment is also created with the use of the React framework.
