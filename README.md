@@ -21,3 +21,6 @@ Getting started with the React framework. The assignment was to make a resume wi
 
 ## [OOP7](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov07-ian-philip-eglin/src) - Dynamic applications with database communication
 Implementing the use of databases to create dynamic applications that writes out the information from the databases. This assignment is also created with the use of the React framework.
+
+## [OOP8](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov08-ian-philip-eglin/src) - User input, component preferances and service classes
+Creating even more dynamic applications which allows the user to directly change the informastion in the database from the app. Methods that allow this are stored in a separate JavaScript file and exported. There are some problems with this solution, and it could definitely be improved, but seeing as I do not have prior knowledge of databases this is has to be good enough.
