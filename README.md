@@ -24,3 +24,6 @@ Implementing the use of databases to create dynamic applications that writes out
 
 ## [OOP8](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov08-ian-philip-eglin/src) - User input, component preferances and service classes
 Creating even more dynamic applications which allows the user to directly change the informastion in the database from the app. Methods that allow this are stored in a separate JavaScript file and exported. There are some problems with this solution, and it could definitely be improved, but seeing as I do not have prior knowledge of databases this is has to be good enough.
+
+## [OOP9](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov09-ian-philip-eglin/src) - Reusable components and splitted conditional objects
+Using widgets and glasses for regular HTML element. By taking advantage of bootstrap the code is easier to produce and you can bypass some basic (and terrifying) CSS scripting. This means that you can easily make a basic GUI for database interaction with just JS which is GREAT! I don't like CSS if you hadn't guessed it already...
