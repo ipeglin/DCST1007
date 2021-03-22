@@ -96,18 +96,28 @@ function createAccount() {
     // Checking if the account is for a child
     let isChild = checkbox.checked == true ? true : false;
 
-    // If the account is for a child, create a child account
-    if (isChild) {
-        this["" + name.split(" ")[0].toLowerCase()] = new ChildrensAccount(generateCustomerNr(), name);
-        customerTickers.push("" + name.split(" ")[0].toLowerCase());
+    name = purgeNumbers(name);
+
+    if (name.length != 0) {
+        // If the account is for a child, create a child account
+        if (isChild) {
+            this["" + name.split(" ")[0].toLowerCase()] = new ChildrensAccount(generateCustomerNr(), name);
+            customerTickers.push("" + name.split(" ")[0].toLowerCase());
+        }
+        else {
+            this["" + name.split(" ")[0].toLowerCase()] = new Account(generateCustomerNr(), name ,deposit);
+            customerTickers.push("" + name.split(" ")[0].toLowerCase());
+        }
+
+        // Logging to the console that the user has been made
+        console.log("Account created for: " + name + " under username: " + name.split(" ")[0].toLowerCase());    
     }
     else {
-        this["" + name.split(" ")[0].toLowerCase()] = new Account(generateCustomerNr(), name ,deposit);
-        customerTickers.push("" + name.split(" ")[0].toLowerCase());
+        throwError("Invalid name input")
     }
+    
 
-    // Logging to the console that the user has been made
-    console.log("Account created for: " + name + " under username: " + name.split(" ")[0].toLowerCase());
+    
     clearInputs();
 }
 
@@ -115,10 +125,16 @@ function transferAmount() {
     let amount = parseFloat(document.getElementById("transfer-sum-input").value);
     let sender = document.getElementById("sender").value;
     let reciever = document.getElementById("reciever").value;
-    // Using the methods for the respective account holders
-    this[sender].withdraw(amount);
-    this[reciever].deposit(amount);
 
+    if (sender != reciever) {
+        // Using the methods for the respective account holders
+        this[sender].withdraw(amount);
+        this[reciever].deposit(amount);
+    }
+    else {
+        throwError("You have chosen two of the same account")
+    }
+    
     clearInputs();
     showAccounts();
 }
@@ -159,4 +175,20 @@ function clearInputs() {
     document.getElementById("deposit-amount").value = "";
     document.getElementById("withdraw-name-input").value = "";
     document.getElementById("withdraw-amount").value = "";
+}
+
+let throwError = (err) => {
+    return console.error(new Error(err));
+}
+
+let purgeNumbers = (string) => {
+    let digits = ["0", "1", "2", "3", "4", "5", "7", "8", "9"]
+    let newString = "";
+    for (let char of string) {
+        if (!(char in digits)) {
+            console.log(char)
+            newString += char;
+        }
+    }
+    return newString;
 }
