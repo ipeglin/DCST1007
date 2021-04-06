@@ -1,3 +1,4 @@
 node_modules
 mysql-pool.js
+mysql-pool.tsx
 LICENSE
