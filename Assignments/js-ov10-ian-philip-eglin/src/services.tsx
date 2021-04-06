@@ -73,7 +73,7 @@ class GroupService {
     });
   }
 
-  getGroup(id: any) {
+  getGroup(id: number) {
     return new Promise((resolve, reject) => {
       pool.query('SELECT * FROM GroupsOOP9 WHERE id=?', [id], (error: any, results: unknown[]) => {
         if (error) return reject(error);
@@ -83,7 +83,7 @@ class GroupService {
     });
   }
 
-  getMembers(memberGroup: any) {
+  getMembers(memberGroup: number) {
     return new Promise((resolve, reject) => {
       pool.query('SELECT * FROM StudentsOOP9 WHERE groupID=?', [memberGroup], (error: any, results: unknown) => {
         if (error) return reject(error);
