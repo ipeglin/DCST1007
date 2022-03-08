@@ -1,98 +1,10 @@
-<style>
-    body {
-  background-color: #1D1D1D;
-  min-height: 100vh;
-  margin: 0;
-  font-family: "Droid Sans", sans-serif;
-    }
-    body:before {
-        content: "";
-        position: fixed;
-        top: 0px;
-        left: 50%;
-        bottom: 0px;
-        transform: translateX(-50%);
-        width: 4px;
-        background-color: #fff;
-    }
-    body .entries {
-        width: calc(100% - 80px);
-        max-width: 800px;
-        margin: auto;
-        position: relative;
-        left: -5px;
-    }
-    body .entries .entry {
-        width: calc(50% - 80px);
-        float: left;
-        padding: 20px;
-        clear: both;
-        text-align: right;
-    }
-    body .entries .entry:not(:first-child) {
-        
-    }
-    body .entries .entry .title {
-        font-size: 32px;
-        margin-bottom: 12px;
-        position: relative;
-        color: #fff;
-    }
-    body .entries .entry .title:before {
-        content: "";
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        border: 4px solid #ffffff;
-        background-color: #1D1D1D;
-        border-radius: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -73px;
-        z-index: 1000;
-    }
-    body .entries .entry .title.big:before {
-        width: 24px;
-        height: 24px;
-        transform: translate(8px, -50%);
-    }
-    body .entries .entry .body {
-        color: #aaa;
-    }
-    body .entries .entry .body p {
-        line-height: 1.4em;
-    }
-    body .entries .entry:nth-child(2n) {
-        text-align: left;
-        float: right;
-    }
-    body .entries .entry:nth-child(2n) .title:before {
-        left: -63px;
-    }
-    body .entries .entry:nth-child(2n) .title.big:before {
-        transform: translate(-8px, -50%);
-    }
-</style>
-
 # DCST1007
 This repository contains assignments from the course [DCST1007](https://www.ntnu.edu/studies/courses/DCST1007) at [NTNU, Trondheim](https://www.ntnu.edu/).
 
 
 ## Previous exams
-<div class="entries">
-  <div class="entry">
-    <div class="title big"><a href="https://github.com/ipeglin/DCST1007/tree/master/Exams/Exam-V21">2021, Spring Exam</></div>
-    <!-- <div class="body">
-      <p>Rerum sit libero possimus amet excepturi. Exercitationem enim dolores sunt praesentium dolorum praesentium.</p>
-    </div> -->
-  </div>
-  <div class="entry">
-    <div class="title big">2020, Spring Exam (Coming Soon)</div>
-    <!-- <div class="body">
-      <p>Impedit dolorem commodi explicabo fugit aut alias voluptatem. Magnam earum rerum quae dicta quibusdam aliquam ut.</p>
-    </div> -->
-  </div>
-</div>
+* [2021, Spring Exam]("https://github.com/ipeglin/DCST1007/tree/master/Exams/Exam-V21")
+* [2020, Spring Exam (Coming Soon)]("https://github.com/ipeglin/DCST1007/tree/master/Exams/")
 
 
 ## Assignments
