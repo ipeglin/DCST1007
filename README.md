@@ -27,3 +27,6 @@ Creating even more dynamic applications which allows the user to directly change
 
 ## [OOP9](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov09-ian-philip-eglin/src) - Reusable components and splitted conditional objects
 Using widgets and glasses for regular HTML element. By taking advantage of bootstrap the code is easier to produce and you can bypass some basic (and terrifying) CSS scripting. This means that you can easily make a basic GUI for database interaction with just JS which is GREAT! I don't like CSS if you hadn't guessed it already...
+
+## [OOP10](https://github.com/ipeglin/DCST1007/tree/master/Assignments/js-ov10-ian-philip-eglin/src) - Static type checking
+Converting the OOP9 code to use typescript to make sure that all variables in the code are run with the intended type. No functionality was deleted or appended, but I removed the stores.js file and implemented the two methods into studentService and groupService in services.js
