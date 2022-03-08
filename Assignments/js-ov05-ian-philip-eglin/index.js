@@ -102,41 +102,39 @@ let mountainData = [
 
 // Converting the data into JSON format
 let mountainText = JSON.stringify(mountainData);
-// Locally storing the data under the json file fylkestopper.json
+
+// Locally store data
 localStorage.setItem("fylkestopper.json", mountainText)
 
 
 
 // OPPGAVE 2
 
-// Importing the data from the local storage
+// Importing the data
 let jsonData = localStorage.getItem("fylkestopper.json");
-// Parsing the data so it is readable
 let data = JSON.parse(jsonData);
 
-// Creating the HTML text for the table element
+
 let tableElement = "<table id='summit-table'><tr><th>Fylke</th><th>Fjelltopp</th><th>Høyde</th>";
-// For every county in the JSON database. List the following data in HTML
+
 for (let county of data) {
     tableElement += `<tr><td>${county.county_name}</td><td>${county.summit_name}</td><td>${county.altitude}</tr>`;
 }
+
 tableElement += "</table>"
 
-// Adding the table HTML text to the table holder div
 document.getElementById("tableHolder").innerHTML = tableElement;
 
-
-// What is this? CSS styling in JS. Yuck! Disgusting!
 
 // Creating outer border for the table element
 document.getElementById("summit-table").style.border = "2px solid black";
 document.getElementById("summit-table").style.float = "left";
-// Aligning the table headers to the left of the column
+
 for (let element of document.getElementsByTagName("th")) {
     element.style.textAlign = "left";
     element.style.fontSize = "130%";
 }
-// Adding padding to all table data elements and a thin border that makes the data easier to read
+
 for (let element of document.getElementsByTagName("td")) {
     element.style.paddingRight = "2em";
     element.style.borderTop = "1px solid black";
@@ -149,15 +147,14 @@ for (let element of document.getElementsByTagName("td")) {
 // sorting the data in decending order with respect to the altitudes
 let sortedData = data.sort((a, b) => parseFloat(b.altitude) - parseFloat(a.altitude));
 
-// Creating the HTML text for the table element
 let newTableElement = "<table id='summit-table2'><tr><th>Fylke</th><th>Fjelltopp</th><th>Høyde</th>";
-// For every county. List the following data in HTML
+
 for (let county of sortedData) {
     newTableElement += `<tr><td>${county.county_name}</td><td>${county.summit_name}</td><td>${county.altitude}</tr>`;
 }
+
 newTableElement += "</table>"
 
-// Adding the table HTML text to the table holder div
 document.getElementById("tableHolder2").innerHTML = newTableElement;
 
 // Some styling of the second table
@@ -166,7 +163,7 @@ table2.style.border = "2px solid black";
 table2.style.float = "left";
 table2.style.marginLeft = "15px";
 
-// Just a copy of the code from OPPGAVE 2
+
 for (let element of document.getElementsByTagName("th")) {
     element.style.textAlign = "left";
     element.style.fontSize = "130%";
