@@ -1,37 +1,77 @@
 <style>
-    dl {
-        list-style-type: none;
+    body {
+  background-color: #1D1D1D;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Droid Sans", sans-serif;
     }
-
-    dl:before {
-        content: ' ';
-        background: #aaa;
-        display: inline-block;
+    body:before {
+        content: "";
+        position: fixed;
+        top: 0px;
+        left: 50%;
+        bottom: 0px;
+        transform: translateX(-50%);
+        width: 4px;
+        background-color: #fff;
+    }
+    body .entries {
+        width: calc(100% - 80px);
+        max-width: 800px;
+        margin: auto;
+        position: relative;
+        left: -5px;
+    }
+    body .entries .entry {
+        width: calc(50% - 80px);
+        float: left;
+        padding: 20px;
+        clear: both;
+        text-align: right;
+    }
+    body .entries .entry:not(:first-child) {
+        
+    }
+    body .entries .entry .title {
+        font-size: 32px;
+        margin-bottom: 12px;
+        position: relative;
+        color: #fff;
+    }
+    body .entries .entry .title:before {
+        content: "";
         position: absolute;
-        left: 29px;
-        width: 2px;
-        height: 10%; /* 10% points per connection*/
-        z-index: 400;
+        width: 8px;
+        height: 8px;
+        border: 4px solid #ffffff;
+        background-color: #1D1D1D;
+        border-radius: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -73px;
+        z-index: 1000;
     }
-
-    dl > dt:before {
-        content: ' ';
-        background: #333;
-        display: inline-block;
-        position: absolute;
-        border-radius: 50%;
-        border: 3px solid #6cc644; /* was #22c0e8 Purple: #6e5494*/
-        left: 16.5px;
-        width: 20px;
-        height: 20px;
-        z-index: 400;
+    body .entries .entry .title.big:before {
+        width: 24px;
+        height: 24px;
+        transform: translate(8px, -50%);
     }
-
-    dl >dt, dl > dd {
-        margin: 6pt 0; /* was 20px */
-        padding-left: 60px;
-        padding-bottom: 50px;
-    }  
+    body .entries .entry .body {
+        color: #aaa;
+    }
+    body .entries .entry .body p {
+        line-height: 1.4em;
+    }
+    body .entries .entry:nth-child(2n) {
+        text-align: left;
+        float: right;
+    }
+    body .entries .entry:nth-child(2n) .title:before {
+        left: -63px;
+    }
+    body .entries .entry:nth-child(2n) .title.big:before {
+        transform: translate(-8px, -50%);
+    }
 </style>
 
 # DCST1007
@@ -39,10 +79,20 @@ This repository contains assignments from the course [DCST1007](https://www.ntnu
 
 
 ## Previous exams
-<dl>
-<dt><a href="https://github.com/ipeglin/DCST1007/tree/master/Exams/Exam-V21">2021, Spring Exam</a></dt>
-<dt><a href="https://github.com/ipeglin/DCST1007/tree/master/">2022, Spring Exam (Coming Soon)</a></dt>
-</dl>
+<div class="entries">
+  <div class="entry">
+    <div class="title big"><a href="https://github.com/ipeglin/DCST1007/tree/master/Exams/Exam-V21">2021, Spring Exam</></div>
+    <!-- <div class="body">
+      <p>Rerum sit libero possimus amet excepturi. Exercitationem enim dolores sunt praesentium dolorum praesentium.</p>
+    </div> -->
+  </div>
+  <div class="entry">
+    <div class="title big">2020, Spring Exam (Coming Soon)</div>
+    <!-- <div class="body">
+      <p>Impedit dolorem commodi explicabo fugit aut alias voluptatem. Magnam earum rerum quae dicta quibusdam aliquam ut.</p>
+    </div> -->
+  </div>
+</div>
 
 
 ## Assignments
