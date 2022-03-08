@@ -8,7 +8,15 @@ import { createHashHistory } from 'history';
 
 const history = createHashHistory();
 
+/**
+ * Menu page component
+ */
 class Menu extends Component {
+  /**
+   * @method render Renders component to DOM
+   * 
+   * @returns {div} Div holding navbar
+   */
   render() {
     return (
       <div>
@@ -28,12 +36,23 @@ class Menu extends Component {
   }
 }
 
+/**
+ * Home page component
+ */
 class Home extends Component {
+  /**
+   * @method render Renders text to component
+   * 
+   * @returns {div}
+   */
   render() {
     return <div>Welcome to StudAdm</div>;
   }
 }
 
+/**
+ * Studentlist component holding students objects from database
+ */
 class StudentList extends Component {
   students = [];
 
@@ -42,6 +61,11 @@ class StudentList extends Component {
   newStudentEmail = null;
   newStudentProgramID = null;
 
+  /**
+   * @method render Render list to component
+   * 
+   * @returns {div} Div containing list of links to information page about each student
+   */
   render() {
     return (
       <div>
@@ -78,12 +102,18 @@ class StudentList extends Component {
     );
   }
 
+  /**
+   * @method mounted Add all students from database to array on load
+   */
   mounted() {
     studentService.getStudents((students) => {
       this.students = students;
     });
   }
 
+  /**
+   * @method add Adds a new student to database
+   */
   add() {
     studentService.addStudent(
       this.newStudentName,
@@ -97,9 +127,17 @@ class StudentList extends Component {
   }
 }
 
+/**
+ * Component holding list of studyprograms for students
+ */
 class ProgramList extends Component {
   programs = [];
 
+  /**
+   * Render list to component
+   * 
+   * @returns {div} Div containing list of study programs that the students might be in
+   */
   render() {
     return (
       <div>
@@ -136,12 +174,18 @@ class ProgramList extends Component {
     );
   }
 
+  /**
+   * @method mounted Add all programs from database on mount
+   */
   mounted() {
     programService.getPrograms((programs) => {
       this.programs = programs;
     });
   }
 
+  /**
+   * @method add Adds a new study program to database
+   */
   add() {
     programService.addProgram(
       this.newProgramName,
@@ -155,12 +199,20 @@ class ProgramList extends Component {
   }
 }
 
+/**
+ * Edit page component for students
+ */
 class StudentEdit extends Component {
   student = null;
   newProgramName = null;
   newProgramCode = null;
   newProgramGroup = null;
 
+  /**
+   * @method render Renders edit page to component
+   * 
+   * @returns {(null|div)} Div containing input form for changing student properties or null
+   */
   render() {
     if (!this.student) return null;
 
@@ -190,18 +242,27 @@ class StudentEdit extends Component {
     );
   }
 
+  /**
+   * @method mounted Get all students from database on mount
+   */
   mounted() {
     studentService.getStudent(this.props.match.params.id, (student) => {
       this.student = student;
     });
   }
 
+  /**
+   * @method save Update values in the database for selected student
+   */
   save() {
     studentService.updateStudent(this.student, () => {
       history.push('/students');
     });
   }
 
+  /**
+   * @method remove Removing student from database
+   */
   remove() {
     studentService.removeStudent(this.props.match.params.id, () => {
       history.push('/students');
@@ -209,6 +270,11 @@ class StudentEdit extends Component {
   }
 }
 
+/**
+   * @method render Renders edit page to component
+   * 
+   * @returns {(null|div)} Div containing input form for changing study program properties or null
+   */
 class ProgramEdit extends Component {
   program = null;
   studentList = null;
@@ -244,6 +310,9 @@ class ProgramEdit extends Component {
     );
   }
 
+  /**
+   * @method mounted Get all students from database on mount
+   */
   mounted() {
     programService.getProgram(this.props.match.params.id, (program) => {
       this.program = program;
@@ -253,18 +322,27 @@ class ProgramEdit extends Component {
     });
   }
 
+  /**
+   * @method save Update values in the database for selected study program
+   */
   save() {
     programService.updateProgram(this.program, () => {
       history.push('/programs');
     });
   }
 
+  /**
+   * @method remove Removing study program from database
+   */
   remove() {
     programService.removeProgram(this.props.match.params.id, () => {
       history.push('/programs');
     });
   }
 
+  /**
+   * @method listParticipants Get all participants from a given participant group
+   */
   listParticipants() {
     programService.getParticipants(this.program.participantGroup),
       (studentList) => {
@@ -273,6 +351,11 @@ class ProgramEdit extends Component {
   }
 }
 
+/**
+ * Renderer for the React DOM holding a routing for page components
+ * NB! This method of routing is outdated. Check React documentation for the
+ *    new approach.
+ */
 ReactDOM.render(
   <HashRouter>
     <Menu />
