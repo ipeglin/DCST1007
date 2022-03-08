@@ -5,10 +5,11 @@ import { NavLink, HashRouter, Route } from 'react-router-dom';
 
 /**
  * Menu component for navigation
+ * @class
  */
 class Menu extends Component {
   /**
-   * Renders the menu to the DOM
+   * @method render Renders the menu to the DOM
    * 
    * @returns {div} Div holding the nivbar
    */
@@ -30,8 +31,14 @@ class Menu extends Component {
 
 /**
  * Home page component
+ * @class
  */
 class Home extends Component {
+  /**
+   * @method render Renders message to component
+   * 
+   * @returns {div}
+   */
   render() {
     return <div><h1>*Your Name Here*</h1><h3><i>*Short Text About You*</i></h3></div>;
   }
@@ -39,8 +46,14 @@ class Home extends Component {
 
 /**
  * Education page component
+ * @class
  */
 class Education extends Component {
+  /**
+   * @method render Renders message to component
+   * 
+   * @returns {div}
+   */
   render() {
     return <div>*Your Education Listed Here*</div>;
   }
@@ -48,8 +61,14 @@ class Education extends Component {
 
 /**
  * Work Experience page component
+ * @class
  */
 class WorkExperience extends Component {
+  /**
+   * @method render Renders message to component
+   * 
+   * @returns {div}
+   */
   render() {
     return <div>*Your Previous Work Experience Here*</div>;
   }
@@ -57,8 +76,14 @@ class WorkExperience extends Component {
 
 /**
  * Skills page component
+ * @class
  */
 class Skills extends Component {
+  /**
+   * @method render Renders message to component
+   * 
+   * @returns {div}
+   */
   render() {
     return <div>*Your Additional Skills Here*</div>
   }
