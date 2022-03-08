@@ -6,7 +6,7 @@ import { studentService } from './services';
 import { programService } from './services';
 import { createHashHistory } from 'history';
 
-const history = createHashHistory(); // Use history.push(...) to programmatically change path, for instance after successfully saving a student
+const history = createHashHistory();
 
 class Menu extends Component {
   render() {
@@ -36,6 +36,8 @@ class Home extends Component {
 
 class StudentList extends Component {
   students = [];
+
+  // Initiating info for new student
   newStudentName = null;
   newStudentEmail = null;
   newStudentProgramID = null;
