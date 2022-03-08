@@ -29,7 +29,10 @@ Applikasjonen skal ha følgende funksjonaliteter:
 * Det skal være mulig å legge til et chat rom
 * Det skal være mulig å legge til en melding i et chat rom
  
-For å få full uttelling på denne oppgaven må kildekoden i applikasjonen være godt strukturert slik at det er enkelt å utvide applikasjonen senere. Det gis ekstra poeng for å ta i bruk Promise-objekter og/eller statisk typesjekking.
+For å få full uttelling på denne oppgaven må kildekoden i applikasjonen være godt strukturert slik at det er enkelt å utvide applikasjonen senere.
+Det gis ekstra poeng for å ta i bruk Promise-objekter og/eller statisk typesjekking.
 
 En eksempel løsning kan se slik ut, der bildet til venstre viser applikasjonen ved oppstart, og bildet til høyre viser chat-rommet Middag med meldinger:
+
+
 ![Example of functionality](./Images/Example-image.png)
