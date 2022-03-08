@@ -4,7 +4,7 @@ This repository contains assignments from the course [DCST1007](https://www.ntnu
 
 ## Previous exams
 * [2021, Spring Exam]("https://github.com/ipeglin/DCST1007/tree/master/Exams/Exam-V21")
-* [2020, Spring Exam (Coming Soon)]("https://github.com/ipeglin/DCST1007/tree/master/Exams/")
+* [2020, Spring Exam]("https://github.com/ipeglin/DCST1007/tree/master/Exams/") (Coming Soon)
 
 
 ## Assignments
