@@ -4,7 +4,15 @@ import ReactDOM from 'react-dom';
 import { NavLink, HashRouter, Route } from 'react-router-dom';
 import { pool } from './mysql-pool';
 
+/**
+ * Menu page component
+ */
 class Menu extends Component {
+  /**
+   * Renders component to DOM
+   * 
+   * @returns {div} Div holding navbar
+   */
   render() {
     return (
       <div>
@@ -24,15 +32,26 @@ class Menu extends Component {
   }
 }
 
+/**
+ * Home page component
+ */
 class Home extends Component {
   render() {
     return <div>Welcome to StudAdm</div>;
   }
 }
 
+/**
+ * Studentlist component holding students objects from database
+ */
 class StudentList extends Component {
   students = [];
 
+  /**
+   * Render list to component
+   * 
+   * @returns {ul} List of links to information page about each student
+   */
   render() {
     return (
       <ul>
@@ -45,6 +64,9 @@ class StudentList extends Component {
     );
   }
 
+  /**
+   * Add all students from database to array
+   */
   mounted() {
     pool.query('SELECT * FROM Students', (error, results) => {
       if (error) return console.error(error); // If error, show error in console (in red text) and return
@@ -54,10 +76,17 @@ class StudentList extends Component {
   }
 }
 
-// Added a new component for listing the different studyprograms
+/**
+ * Component holding list of studyprograms for students
+ */
 class ProgramList extends Component {
   programs = [];
 
+  /**
+   * Render list to component
+   * 
+   * @returns {ul} List of study programs that the students might be in
+   */
   render() {
     return (
       <ul>
@@ -70,8 +99,10 @@ class ProgramList extends Component {
     );
   }
 
+  /**
+   * Retrieving all data from the table containing all the different programs
+   */
   mounted() {
-    // Retrieving all data from the table containing all the different programs
     pool.query('SELECT * FROM StudyPrograms', (error, results) => {
       if (error) return console.error(error);
 
@@ -80,10 +111,18 @@ class ProgramList extends Component {
   }
 }
 
+/**
+ * Component holding student details
+ */
 class StudentDetails extends Component {
   student = null;
   studyProgram = null;
 
+  /**
+   * Render information about student to component
+   * 
+   * @returns {(null|ul)} List of student properties or null
+   */
   render() {
     if (!this.student) return null;
 
@@ -96,15 +135,17 @@ class StudentDetails extends Component {
     );
   }
 
+  /**
+   * Require the information about the student and their study program
+   */
   mounted() {
     pool.query(
       'SELECT * FROM Students WHERE id=?',
       [this.props.match.params.id],
       (error, results) => {
-        if (error) return console.error(error); // If error, show error in console (in red text) and return
+        if (error) return console.error(error);
         this.student = results[0];
 
-        // Require the information containing the students studyprogram
         pool.query(
           `SELECT * FROM StudyPrograms WHERE id=${this.student.programID}`,
           (error, results) => {
@@ -118,12 +159,18 @@ class StudentDetails extends Component {
   }
 }
 
-// Created a new component for listing the details of each study program
+/**
+ * Component for listing the details of each study program
+ */
 class ProgramDetails extends Component {
   program = null;
-  // Creating an variable for holding names. Making it more neat to organize
-  studentList = null;
+  studentList = null; // Variable for holding names.
 
+  /**
+   * Renders list of details to component
+   * 
+   * @returns {(null|div)} List of details on study program or null
+   */
   render() {
     if (!this.program) return null;
 
@@ -136,8 +183,10 @@ class ProgramDetails extends Component {
     );
   }
 
+  /**
+   * Request data from database with the program info and participant group identifier for each of them
+   */
   mounted() {
-    // Requesting data from database containing the program information as well as the participant group identifier for each of them
     pool.query(
       'SELECT * FROM StudyPrograms WHERE id=?',
       [this.props.match.params.id],
@@ -146,19 +195,18 @@ class ProgramDetails extends Component {
 
         this.program = results[0];
 
-        // Sending a new information request to a third database containing participants for all programs. Only retrieving the names from the wanted program
+        // Getting participants from specific study program
         pool.query(
           `SELECT * FROM Participants WHERE groupID=${this.program.participantGroup}`,
           (error, results) => {
             if (error) return console.error(error);
             this.studentList = '';
 
-            // Adding all the student names to the
             for (let student of results) {
               this.studentList += `${student.name}, `;
             }
 
-            // If the list contains names... Remove the last to characters (' ,'). Else... Don't do anything
+            // Remove the last to characters ' ,' if the list isn't empty
             this.studentList
               ? (this.studentList = this.studentList.substring(0, this.studentList.length - 2))
               : null;
@@ -169,6 +217,11 @@ class ProgramDetails extends Component {
   }
 }
 
+/**
+ * Renderer for the React DOM holding a routing for page components
+ * NB! This method of routing is outdated. Check React documentation for the
+ *    new approach.
+ */
 ReactDOM.render(
   <HashRouter>
     <div>
