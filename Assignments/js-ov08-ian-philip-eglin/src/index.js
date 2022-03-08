@@ -10,6 +10,7 @@ const history = createHashHistory();
 
 /**
  * Menu page component
+ * @class
  */
 class Menu extends Component {
   /**
@@ -38,6 +39,7 @@ class Menu extends Component {
 
 /**
  * Home page component
+ * @class
  */
 class Home extends Component {
   /**
@@ -52,6 +54,7 @@ class Home extends Component {
 
 /**
  * Studentlist component holding students objects from database
+ * @class
  */
 class StudentList extends Component {
   students = [];
@@ -129,6 +132,7 @@ class StudentList extends Component {
 
 /**
  * Component holding list of studyprograms for students
+ * @class
  */
 class ProgramList extends Component {
   programs = [];
@@ -201,6 +205,7 @@ class ProgramList extends Component {
 
 /**
  * Edit page component for students
+ * @class
  */
 class StudentEdit extends Component {
   student = null;
@@ -271,14 +276,18 @@ class StudentEdit extends Component {
 }
 
 /**
-   * @method render Renders edit page to component
-   * 
-   * @returns {(null|div)} Div containing input form for changing study program properties or null
-   */
+ * Page component for changing program information
+ * @class
+ */
 class ProgramEdit extends Component {
   program = null;
   studentList = null;
-
+  
+  /**
+     * @method render Renders edit page to component
+     * 
+     * @returns {(null|div)} Div containing input form for changing study program properties or null
+     */
   render() {
     if (!this.program) return null;
 

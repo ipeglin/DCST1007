@@ -9,7 +9,16 @@ import { createHashHistory } from 'history';
 
 const history = createHashHistory(); // Use history.push(...) to programmatically change path, for instance after successfully saving a student
 
+/**
+ * Menu component
+ * @class
+ */
 class Menu extends Component {
+  /**
+   * @method render Renders navbar to component
+   * 
+   * @returns {NavBar} Navbar containing links
+   */
   render() {
     return (
       <NavBar brand="StudAdm">
@@ -20,15 +29,33 @@ class Menu extends Component {
   }
 }
 
+/**
+ * Home page component
+ * @class
+ */
 class Home extends Component {
+  /**
+   * @method render Renders card to component
+   * 
+   * @returns {Card} Welcome card
+   */
   render() {
     return <Card title="Welcome">Welcome to StudAdm</Card>;
   }
 }
 
+/**
+ * Studentlist component holding students objects from database
+ * @class
+ */
 class StudentList extends Component {
   students = [];
 
+  /**
+   * @method render Render a card with all students
+   * 
+   * @returns {Card}
+   */
   render() {
     return (
       <Card title="Students">
@@ -43,6 +70,9 @@ class StudentList extends Component {
     );
   }
 
+  /**
+   * @method mounted Get all students from database on mount
+   */
   mounted() {
     studentService
       .getStudents()
@@ -51,10 +81,19 @@ class StudentList extends Component {
   }
 }
 
+/**
+ * Component holding student details
+ * @class
+ */
 class StudentDetails extends Component {
   student = null;
   group = null;
 
+  /**
+   * @method render Renders information about student
+   * 
+   * @returns {div} Div containing Card for student information
+   */
   render() {
     if (!this.student || !this.group) return null;
 
@@ -81,12 +120,15 @@ class StudentDetails extends Component {
     );
   }
 
+  /**
+   * @method mounted Get specific student based on the id passed in the hash history
+   */
   mounted() {
     studentService
       .getStudent(this.props.match.params.id)
       .then((student) => (this.student = student))
       .then((student) => {
-        studentService
+        groupService
           .getGroup(student.groupID)
           .then((group) => (this.group = group))
           .catch((error) => Alert.danger('ERROR! Failed to get group'));
@@ -94,14 +136,26 @@ class StudentDetails extends Component {
       .catch((error) => Alert.danger('ERROR getting student'));
   }
 
+  /**
+   * @method edit Push new URL with student id to hash history
+   */
   edit() {
     history.push('/students/' + this.student.id + '/edit');
   }
 }
 
+/**
+ * Components holding edit form for student
+ * @class
+ */
 class StudentEdit extends Component {
   student = null;
 
+  /**
+   * @method render Renders edit form for student
+   * 
+   * @returns {div} Div containing form for modifying student values
+   */
   render() {
     if (!this.student) return null;
 
@@ -133,6 +187,9 @@ class StudentEdit extends Component {
     );
   }
 
+  /**
+   * @method mounted Get student object with given ID in URL
+   */
   mounted() {
     studentService
       .getStudent(this.props.match.params.id)
@@ -140,6 +197,9 @@ class StudentEdit extends Component {
       .catch((error) => Alert.danger('ERROR getting students'));
   }
 
+  /**
+   * @method save Store modified student object to database
+   */
   save() {
     store
       .student(this.student)
@@ -149,14 +209,26 @@ class StudentEdit extends Component {
       .catch((error) => Alert.danger('ERROR! Failed to update student'));
   }
 
+  /**
+   * @method cancel Cancel the editing of new student and navigate to students URL
+   */
   cancel() {
     history.push('/students/' + this.props.match.params.id);
   }
 }
 
+/**
+ * Group list component holding group objects from database
+ * @class
+ */
 class GroupList extends Component {
   groups = [];
 
+  /**
+   * @method render Renders Card holding all links to groups
+   * 
+   * @returns {Card}
+   */
   render() {
     return (
       <Card title="Groups">
@@ -171,6 +243,9 @@ class GroupList extends Component {
     );
   }
 
+  /**
+   * @method mounted Get all groups from database on mount
+   */
   mounted() {
     groupService
       .getGroups()
@@ -181,10 +256,19 @@ class GroupList extends Component {
   }
 }
 
+/**
+ * Component holding group details
+ * @class
+ */
 class GroupDetails extends Component {
   group = null;
   members = [];
 
+  /**
+   * @method render Renders information about group
+   * 
+   * @returns {div} Div containing Card for group information
+   */
   render() {
     if (!this.group) return null;
 
@@ -227,6 +311,9 @@ class GroupDetails extends Component {
     );
   }
 
+  /**
+   * @method mounted Get specific group and it's members by ID passed in URL
+   */
   mounted() {
     groupService
       .getGroup(this.props.match.params.id)
@@ -239,14 +326,26 @@ class GroupDetails extends Component {
       .catch((error) => Alert.danger('Error getting members'));
   }
 
+  /**
+   * @method edit Push new URL with group id to hash history
+   */
   edit() {
     history.push('/groups/' + this.group.id + '/edit');
   }
 }
 
+/**
+ * Components holding edit form for group
+ * @class
+ */
 class GroupEdit extends Component {
   group = null;
 
+  /**
+   * @method render Renders edit form for group
+   * 
+   * @returns {div} Div containing edit form for group values
+   */
   render() {
     if (!this.group) return null;
 
@@ -290,6 +389,9 @@ class GroupEdit extends Component {
     );
   }
 
+  /**
+   * @method mounted Get specific group from database by ID
+   */
   mounted() {
     groupService
       .getGroup(this.props.match.params.id)
@@ -297,6 +399,9 @@ class GroupEdit extends Component {
       .catch((error) => Alert.danger('Error getting group'));
   }
 
+  /**
+   * @method save Save modified group values to database
+   */
   save() {
     store
       .group(this.group)
@@ -306,11 +411,19 @@ class GroupEdit extends Component {
       .catch((error) => Alert.danger('An error occured while updating'));
   }
 
+  /**
+   * @method cancel Cancel the editing of new group and navigate to groups URL
+   */
   cancel() {
     history.push('/groups/' + this.props.match.params.id);
   }
 }
 
+/**
+ * Renderer for the React DOM holding a routing for page components
+ * NB! This method of routing is outdated. Check React documentation for the
+ *    new approach.
+ */
 ReactDOM.render(
   <div>
     <Alert />

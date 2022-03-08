@@ -6,10 +6,11 @@ import { pool } from './mysql-pool';
 
 /**
  * Menu page component
+ * @class
  */
 class Menu extends Component {
   /**
-   * Renders component to DOM
+   * @method render Renders component to DOM
    * 
    * @returns {div} Div holding navbar
    */
@@ -34,8 +35,14 @@ class Menu extends Component {
 
 /**
  * Home page component
+ * @class
  */
 class Home extends Component {
+  /**
+   * @method render Render welcome message to component
+   * 
+   * @returns {div}
+   */
   render() {
     return <div>Welcome to StudAdm</div>;
   }
@@ -43,12 +50,13 @@ class Home extends Component {
 
 /**
  * Studentlist component holding students objects from database
+ * @class
  */
 class StudentList extends Component {
   students = [];
 
   /**
-   * Render list to component
+   * @method render Render list to component
    * 
    * @returns {ul} List of links to information page about each student
    */
@@ -65,7 +73,7 @@ class StudentList extends Component {
   }
 
   /**
-   * Add all students from database to array
+   * @method mounted Add all students from database to array
    */
   mounted() {
     pool.query('SELECT * FROM Students', (error, results) => {
@@ -78,12 +86,13 @@ class StudentList extends Component {
 
 /**
  * Component holding list of studyprograms for students
+ * @class
  */
 class ProgramList extends Component {
   programs = [];
 
   /**
-   * Render list to component
+   * @method render Render list to component
    * 
    * @returns {ul} List of study programs that the students might be in
    */
@@ -100,7 +109,7 @@ class ProgramList extends Component {
   }
 
   /**
-   * Retrieving all data from the table containing all the different programs
+   * @method mounted Retrieving all data from the table containing all the different programs
    */
   mounted() {
     pool.query('SELECT * FROM StudyPrograms', (error, results) => {
@@ -113,13 +122,14 @@ class ProgramList extends Component {
 
 /**
  * Component holding student details
+ * @class
  */
 class StudentDetails extends Component {
   student = null;
   studyProgram = null;
 
   /**
-   * Render information about student to component
+   * @method render Render information about student to component
    * 
    * @returns {(null|ul)} List of student properties or null
    */
@@ -136,7 +146,7 @@ class StudentDetails extends Component {
   }
 
   /**
-   * Require the information about the student and their study program
+   * @method render Require the information about the student and their study program
    */
   mounted() {
     pool.query(
@@ -161,13 +171,14 @@ class StudentDetails extends Component {
 
 /**
  * Component for listing the details of each study program
+ * @class
  */
 class ProgramDetails extends Component {
   program = null;
   studentList = null; // Variable for holding names.
 
   /**
-   * Renders list of details to component
+   * @method render Renders list of details to component
    * 
    * @returns {(null|div)} List of details on study program or null
    */
@@ -184,7 +195,7 @@ class ProgramDetails extends Component {
   }
 
   /**
-   * Request data from database with the program info and participant group identifier for each of them
+   * @method mounted Request data from database with the program info and participant group identifier for each of them
    */
   mounted() {
     pool.query(

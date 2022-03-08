@@ -1,6 +1,16 @@
 import { pool } from './mysql-pool';
 
+/**
+ * Creates a service class API for storing new values in databases
+ * @class
+ */
 class StoreChanges {
+  /**
+   * @method student Update database values for a specific student
+   * 
+   * @param {object} student Student object
+   * @returns {Promise} Promise resolving if query succeeds
+   */
   student(student) {
     return new Promise((resolve, reject) => {
       pool.query(
@@ -15,6 +25,12 @@ class StoreChanges {
     });
   }
 
+  /**
+   * @method group Update database values for a specific group
+   * 
+   * @param {object} group Group object
+   * @returns {Promise} Promise resolving if query succeeds
+   */
   group(group) {
     return new Promise((resolve, reject) => {
       pool.query(
