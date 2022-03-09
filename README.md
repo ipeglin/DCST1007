@@ -1,5 +1,5 @@
 # DCST1007
-This repository contains assignments from the course [DCST1007](https://www.ntnu.edu/studies/courses/DCST1007) at [NTNU, Trondheim](https://www.ntnu.edu/).
+This repository contains assignments from the course [DCST1007](https://www.ntnu.edu/studies/courses/DCST1007) at [NTNU, Trondheim](https://www.ntnu.edu/). The content of this repo is __NOT__ intended as a copy/paste solution for others, but instead serves as a log of my own work. It may also in some cases serve as an example of a solution for those who struggle with the intuition on how a problem could be solved. I do not condone plagiarism, and will not be help responsible if others copy my work, resulting in negative consequences.
 
 
 ## Previous exams
