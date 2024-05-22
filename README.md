@@ -6,7 +6,7 @@ The content of this repo is **not** intended as a copy/paste solution for others
 
 ## Previous exams
 * [2021, Spring Exam](https://github.com/ipeglin/DCST1007/tree/master/Exams/Exam-V21)
-* [2020, Spring Exam](https://github.com/ipeglin/DCST1007/tree/master/Exams/) (Coming Soon)
+* [2020, Spring Exam](https://github.com/ipeglin/DCST1007/tree/master/Exams/Exam-V20) (Incomplete)
 
 
 ## Assignments
