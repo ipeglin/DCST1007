@@ -30,12 +30,12 @@ class Knight extends Piece { } // same as above
 class Pawn extends Piece { } // same as above
 
 // array for holding all pieces on the board
-// NB! not that the array is a const, but due to
-// javascript/TypeScript being a garbage language, we can still push to it
+// NB! note that the array is a const, but due to
+// Javascript/TypeScript being a garbage language, we can still push to it
 const pieces: Piece[] = [];
 
 const colors: string[] = ['white', 'black'];
-const alphanumericPositions: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+const horisontalPositions: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
 // creating instances of the chess pieces
 // looping over the colors to create pieces for both white and black
@@ -43,7 +43,7 @@ for (let color in colors) {
   // get the row number for pawns and other pieces depending on color
   const [pawnRow, outerRow] = (color === 'white') ? [1, 2] : [7, 8];
 
-  // copy + paste of solution. it is tedious to write, but can't be bothered to 'optimize'
+  // copy + paste of solution. it is tedious to write, but can't be bothered to 'optimisme'
   pieces.push(new Rook(['A', outerRow], color));
   pieces.push(new Knight(['B', outerRow], color));
   pieces.push(new Bishop(['C', outerRow], color));
@@ -54,7 +54,7 @@ for (let color in colors) {
   pieces.push(new Rook(['H', outerRow], color));
 
   // creating pawns
-  for (let position in alphanumericPositions) {
+  for (let position in horisontalPositions) {
     pieces.push(new Pawn([position, pawnRow], color));
   }
 }
